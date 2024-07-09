@@ -6,6 +6,9 @@ use Illuminate\Http\Request;
 use Hash;
 use Auth;
 use App\Models\User;
+use Str;
+use Mail;
+use App\Mail\ForgotPasswordMail;
 class AuthController extends Controller
 {
     public function login(Request $request)
@@ -34,6 +37,30 @@ class AuthController extends Controller
         }
 
         //dd($request->all());
+    }
+
+
+
+    public function forgot_post(Request $request)
+    {
+      //dd($request->all());
+      $count = User::where('email', '=', $request->email)->count();
+      if($count > 0){
+            $user = User::where('email', '=', $request->email)->first();
+            $user->remember_token = Str::random(50);
+            $user->save();
+                Mail::to($user->email)->send(new ForgotPasswordMail($user));
+
+
+
+
+
+
+
+            return redirect()->back()->with('success', 'password has been reset');
+      }else{
+        return redirect()->back()->withInput()->with('error', 'Email not found in the system');
+      }
     }
 
     public function forgot()

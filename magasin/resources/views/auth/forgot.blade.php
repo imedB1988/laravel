@@ -5,17 +5,18 @@
                 <div class="card-body">
 
                   <div class="pt-4 pb-2">
+                  @include('_message')
                     <h5 class="card-title text-center pb-0 fs-4"> Forgot Your Account</h5>
                     <p class="text-center small">Enter your email to login</p>
                   </div>
 
-                  <form class="row g-3 needs-validation" novalidate>
-
+                  <form method="post" action="{{url('forgot_post')}}" class="row g-3 needs-validation" novalidate>
+                    {{ csrf_field()}}
                     <div class="col-12">
-                      <label for="yourEmail" class="form-label">Email</label>
+                      <label  class="form-label">Email</label>
                       <div class="input-group has-validation">
                         <span class="input-group-text" id="inputGroupPrepend">@</span>
-                        <input type="text" name="email" class="form-control" id="yourEmail" required>
+                        <input type="text" name="email" class="form-control" required value="{{old('email')}}">
                         <div class="invalid-feedback">Please enter your email.</div>
                       </div>
                     </div>
