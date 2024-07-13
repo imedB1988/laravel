@@ -2,6 +2,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\CustomersController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -27,6 +28,8 @@ Route::post('forgot_post', [AuthController::class,'forgot_post']);
 
 Route::group(['middleware'=>'admin'], function(){
 Route::get('/admin/dashboard', [DashboardController::class, 'dashboard'] );
+Route::get('/admin/customers', [CustomersController::class, 'customers'] );
+Route::get('/admin/customers/add_customers', [CustomersController::class, 'add'] );
 });
 
 Route::get('logout', [AuthController::class, 'logout']);
