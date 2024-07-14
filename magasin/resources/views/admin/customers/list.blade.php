@@ -37,13 +37,19 @@
                     </tr>
                   </thead> 
                  <tbody>
+                  @foreach($getRecord as $value)
                  <tr>
-                      <th scope="row">ID</th>
-                      <td>Name</td>
-                      <td>Email</td>
-                      <td>Email</td>
+                      <th scope="row">{{$value->id}}</th>
+                      <td>{{$value->name}}</td>
+                      <td>{{$value->contact_number}}</td>
+                      <td>{{$value->address}}</td>
+                      <td>{{$value->email}}</td>
+                     <td><a href="{{url('admin/customers/edit_customers/'.$value->id)}}" class="btn btn-warning"><i class="bi bi-pencil-square"></i></a>
+                     <a href="{{url('admin/customers/delete/'.$value->id)}}" class="btn btn-danger" onclick="return confirm('are you sure you want to delete ?')"><i class="bi bi-trash"></i></a>
+                      </td>
+                      
                     </tr>
-                  
+                  @endforeach
                 </tbody>
               </table>
                 </div>

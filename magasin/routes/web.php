@@ -30,6 +30,11 @@ Route::group(['middleware'=>'admin'], function(){
 Route::get('/admin/dashboard', [DashboardController::class, 'dashboard'] );
 Route::get('/admin/customers', [CustomersController::class, 'customers'] );
 Route::get('/admin/customers/add_customers', [CustomersController::class, 'add'] );
+Route::post('/admin/customers/add_customers', [CustomersController::class, 'insert_add_customers'] );
+Route::get('/admin/customers/edit_customers/{id}', [CustomersController::class, 'edit'] );
+Route::post('/admin/customers/edit_customers/{id}', [CustomersController::class, 'update_customers'] );
+Route::get('/admin/customers/delete/{id}', [CustomersController::class, 'delete_customers'] );
+
 });
 
 Route::get('logout', [AuthController::class, 'logout']);

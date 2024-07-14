@@ -4,11 +4,11 @@
 <main id="main" class="main">
 
 <div class="pagetitle">
-  <h1>Add Customer</h1>
+  <h1>Edit Customer</h1>
   <nav>
     <ol class="breadcrumb">
       <li class="breadcrumb-item"><a href="index.html">Customers</a></li>
-      <li class="breadcrumb-item active">Add Customers</li>
+      <li class="breadcrumb-item active">Edit Customers</li>
     </ol>
   </nav>
 </div><!-- End Page Title -->
@@ -19,40 +19,40 @@
             <div class="card">
               <div class="card-body">
                 <h5 class="card-title">Customer</h5>
-                    <form action="{{url('admin/customers/add_customers')}}" method="post" enctype="multipart/form-data">
+                    <form action="{{url('admin/customers/edit_customers/'.$getRecord->id)}}" method="post" enctype="multipart/form-data">
                         {{csrf_field()}}
                         <div class="row md-3">
                             <label class="col-sm-2 col-form-label">Name :</label>
                             <div class="col-sm-10">
-                                <input type="text" name="name" class="form-control" required/>
+                                <input type="text" name="name" class="form-control" required value="{{$getRecord->name}}"/>
                             </div>
                         </div>
                         <br>
                         <div class="row md-3">
                             <label class="col-sm-2 col-form-label">Contact Number :</label>
                             <div class="col-sm-10">
-                            <input type="tel" name="contact_number" class="form-control" required/>
+                            <input type="tel" name="contact_number" class="form-control" required value="{{$getRecord->contact_number}}"/>
                             </div>
                         </div>
                         <br>
                         <div class="row md-3">
                             <label class="col-sm-2 col-form-label">Address :</label>
                             <div class="col-sm-10">
-                            <textarea name="address" class="form-control" required></textarea>
+                            <textarea name="address" class="form-control" required>{{$getRecord->address}}</textarea>
                             </div>
                         </div>
                         <br>
                         <div class="row md-3">
                             <label class="col-sm-2 col-form-label">Email :</label>
                             <div class="col-sm-10">
-                            <input type="email" name="email" class="form-control" required/>
+                            <input type="email" name="email" class="form-control" required value="{{$getRecord->email}}"/>
                             </div>
                         </div>
                         <br>
                         <div class="row md-3">
                         <label class="col-sm-2 col-form-label"></label>
                             <div class="col-sm-10">
-                            <button type="submit" class="btn btn-primary">Submit</textarea>
+                            <button type="submit" class="btn btn-primary">Update</textarea>
                             </div>
                         </div>
                     </form> 
