@@ -15,6 +15,18 @@
           <span>Customers</span>
         </a>
       </li><!-- End Dashboard Nav -->
+      <li class="nav-item">
+        <a class="nav-link @if(Request::segment(2)=='products')@else collapsed @endif" href="{{url('admin/products')}}">
+        <i class="bi bi-box-seam-fill"></i>
+          <span>Products</span>
+        </a>
+      </li><!-- End Dashboard Nav -->
+      <li class="nav-item">
+        <a class="nav-link @if(Request::segment(2)=='product_stock')@else collapsed @endif" href="{{url('admin/product_stock')}}">
+        <i class="bi bi-inboxes"></i>
+          <span>Products Stocks</span>
+        </a>
+      </li><!-- End Dashboard Nav -->
 
       <li class="nav-item">
         <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
