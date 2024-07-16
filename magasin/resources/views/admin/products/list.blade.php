@@ -30,7 +30,7 @@
                     <tr>
                       <th scope="col">ID</th>
                       <th scope="col">Product Name</th>
-                      <th scope="col">Quantity</th>
+                    
                       <th scope="col">Action</th>
                     </tr>
                   </thead> 
@@ -39,7 +39,7 @@
                  <tr>
                       <th scope="row">{{$value->id}}</th>
                       <td>{{$value->productname}}</td>
-                      <td>{{$value->quantity}}</td>
+                     
                       
                      <td><a href="{{url('admin/products/edit_products/'.$value->id)}}" class="btn btn-warning"><i class="bi bi-pencil-square"></i></a>
                      <a href="{{url('admin/products/delete/'.$value->id)}}" class="btn btn-danger" onclick="return confirm('are you sure you want to delete ?')"><i class="bi bi-trash"></i></a>

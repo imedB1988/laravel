@@ -28,12 +28,7 @@
                             </div>
                         </div>
                         <br>
-                        <div class="row md-3">
-                            <label class="col-sm-2 col-form-label">Quantity</label>
-                            <div class="col-sm-10">
-                            <input type="number" name="quantity" class="form-control" required value="{{$getRecord->quantity}}"/>
-                            </div>
-                        </div>
+                     
                         <br>
                         
                         <br>

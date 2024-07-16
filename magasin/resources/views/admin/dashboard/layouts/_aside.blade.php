@@ -22,8 +22,8 @@
         </a>
       </li><!-- End Dashboard Nav -->
       <li class="nav-item">
-        <a class="nav-link @if(Request::segment(2)=='product_stock')@else collapsed @endif" href="{{url('admin/product_stock')}}">
-        <i class="bi bi-inboxes"></i>
+        <a class="nav-link @if(Request::segment(2)=='productstock')@else collapsed @endif" href="{{url('admin/productstock')}}">
+        <i class="bi bi-database-fill"></i>
           <span>Products Stocks</span>
         </a>
       </li><!-- End Dashboard Nav -->

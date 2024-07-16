@@ -27,7 +27,6 @@ class ProductsController extends Controller
 
         $save = new ProductsModel;
         $save -> productname =trim($request->productname);
-        $save -> quantity =trim($request->quantity);
         $save->save();
 
         return redirect('admin/products')->with('success', 'products Added');
@@ -44,7 +43,6 @@ class ProductsController extends Controller
     {
         $save = ProductsModel::getSingle($id);
         $save -> productname =trim($request->productname);
-        $save -> quantity =trim($request->quantity);
         
         $save->save();
 
