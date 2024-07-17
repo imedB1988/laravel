@@ -47,14 +47,12 @@ Route::get('/admin/products/delete/{id}', [ProductsController::class, 'delete_pr
 Route::get('/admin/productstock', [ProductStockController::class, 'productstock'] );
 Route::get('admin/productstock/add_stock', [ProductStockController::class, 'add'] );
 Route::post('/admin/productstock/add_stock', [ProductStockController::class, 'insert_add_productstock'] );
-
-
-
-
-
-});
+Route::get('admin/productstock/delete/{id}', [ProductStockController::class, 'delete_productstock'] );
+Route::get('admin/productstock/edit_stock/{id}', [ProductStockController::class, 'edit_productstock']);
+Route::post('admin/productstock/edit_stock/{id}', [ProductStockController::class, 'update_productstock']);
 
 Route::get('logout', [AuthController::class, 'logout']);
 
 
 
+});

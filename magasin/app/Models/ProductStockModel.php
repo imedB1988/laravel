@@ -19,4 +19,8 @@ class ProductStockModel extends Model
     static public function getSingle($id){
         return self::find($id);
     }
+
+    public function getProductNames(){
+        return $this->belongsTo(ProductsModel::class, 'productid');
+    }
 }

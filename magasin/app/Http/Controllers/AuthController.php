@@ -22,8 +22,9 @@ class AuthController extends Controller
 
     public function login_post(Request $request)
     {
-        //echo "hello imed eddine benzarti"; die();
-       if(Auth::attempt(['email'=>$request->email, 'password'=>$request->password], true)){
+        
+                    //echo "hello imed eddine benzarti"; die();
+      if(Auth::attempt(['email'=>$request->email, 'password'=>$request->password], true)){
                 if(Auth::User()->is_role=='1'){
                         return redirect()->intended('admin/dashboard');
                 }else{
