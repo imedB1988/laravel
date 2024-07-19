@@ -5,12 +5,11 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class ProductStockModel extends Model
+class SuppliersModel extends Model
 {
     use HasFactory;
 
-    protected $table= 'productstock';
-
+    protected $table= 'suppliers';
 
     static public function getAllRecord(){
         return self::get();
@@ -20,9 +19,5 @@ class ProductStockModel extends Model
         return self::find($id);
     }
 
-    public function getProductNames(){
-        return $this->belongsTo(ProductsModel::class, 'productid');
-    }
 
-  
 }

@@ -27,6 +27,19 @@
           <span>Products Stocks</span>
         </a>
       </li><!-- End Dashboard Nav -->
+      <li class="nav-item">
+        <a class="nav-link @if(Request::segment(2)=='suppliers')@else collapsed @endif" href="{{url('admin/suppliers')}}">
+        <i class="bi bi-people-fill"></i>
+          <span>Suppliers</span>
+        </a>
+      </li><!-- End Dashboard Nav -->
+
+      <li class="nav-item">
+        <a class="nav-link @if(Request::segment(2)=='invoices')@else collapsed @endif" href="{{url('admin/invoices')}}">
+        <i class="bi bi-card-list"></i>
+          <span>Invoices</span>
+        </a>
+      </li><!-- End Dashboard Nav -->
 
       <li class="nav-item">
         <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">

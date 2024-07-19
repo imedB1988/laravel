@@ -5,6 +5,8 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\CustomersController;
 use App\Http\Controllers\ProductsController;
 use App\Http\Controllers\ProductStockController;
+use App\Http\Controllers\SuppliersController;
+use App\Http\Controllers\InvoicesController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -50,6 +52,20 @@ Route::post('/admin/productstock/add_stock', [ProductStockController::class, 'in
 Route::get('admin/productstock/delete/{id}', [ProductStockController::class, 'delete_productstock'] );
 Route::get('admin/productstock/edit_stock/{id}', [ProductStockController::class, 'edit_productstock']);
 Route::post('admin/productstock/edit_stock/{id}', [ProductStockController::class, 'update_productstock']);
+
+//suppliers
+Route::get('/admin/suppliers', [SuppliersController::class, 'suppliers'] );
+Route::get('admin/suppliers/add_suppliers', [SuppliersController::class, 'add'] );
+Route::post('/admin/suppliers/add_suppliers', [SuppliersController::class, 'insert_add_suppliers'] );
+Route::get('admin/suppliers/delete/{id}', [SuppliersController::class, 'delete_suppliers'] );
+Route::get('admin/suppliers/edit_suppliers/{id}', [SuppliersController::class, 'edit']);
+Route::post('admin/suppliers/edit_suppliers/{id}', [SuppliersController::class, 'update_suppliers']);
+
+//invoices
+Route::get('/admin/invoices/', [InvoicesController::class, 'invoices'] );
+Route::get('admin/invoices/add_invoices', [InvoicesController::class, 'add'] );
+Route::post('admin/invoices/add_invoices', [InvoicesController::class, 'insert_add_invoices'] );
+
 
 Route::get('logout', [AuthController::class, 'logout']);
 
