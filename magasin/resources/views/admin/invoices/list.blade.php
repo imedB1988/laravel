@@ -44,8 +44,8 @@
                       <td>{{!empty($value->getCustomersNames->name) ? $value->getCustomersNames->name : ''}}</td>
                       <td>{{!empty($value->getProductNames->productname) ? $value->getProductNames->productname : ''}}</td>
                       <td>{{$value->quantity}}</td>
-                      <td><a href="{{url('admin/productstock/edit_stock/'.$value->id)}}" class="btn btn-warning"><i class="bi bi-pencil-square"></i></a>
-                     <a href="{{url('admin/productstock/delete/'.$value->id)}}" class="btn btn-danger" onclick="return confirm('are you sure you want to delete ?')"><i class="bi bi-trash"></i></a>
+                      <td><a href="{{url('admin/invoices/edit_invoice/'.$value->id)}}" class="btn btn-warning"><i class="bi bi-pencil-square"></i></a>
+                     <a href="{{url('admin/invoices/delete/'.$value->id)}}" class="btn btn-danger" onclick="return confirm('are you sure you want to delete ?')"><i class="bi bi-trash"></i></a>
                       </td>
                       
                     </tr>

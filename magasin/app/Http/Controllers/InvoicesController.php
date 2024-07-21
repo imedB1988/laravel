@@ -38,4 +38,33 @@ class InvoicesController extends Controller
         return redirect('admin/invoices')->with('success', 'invoices Added');
     
     }
+
+    public function delete_invoices($id, Request $request){
+        $deleterecord=InvoicesModel::find($id);
+        $deleterecord->delete();
+        return redirect('admin/invoices')->with('success', 'invoice deleted');
+
+    }
+
+    public function edit_invoices($id, Request $request){
+      
+        $data['oldRecord']=InvoicesModel::find($id);
+        $data['getRecord'] = CustomersModel::getAllRecord();
+        $data['getRecords'] = ProductsModel::getAllRecord();
+        return view('admin.invoices.edit_invoice', $data);
+        }
+
+        public function update_invoices($id, Request $request){
+            $save = InvoicesModel::find($id);
+            $save ->invoices_date =trim($request->invoices_date);
+            $save ->customers_id =trim($request->customers_id);
+            $save ->productid =trim($request->productid);
+            $save ->quantity =trim($request->quantity);
+            $save->save();
+    
+            return redirect('admin/invoices')->with('success', 'invoices updated');      
+        }
+    
+   
+
 }

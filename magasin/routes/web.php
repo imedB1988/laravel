@@ -65,6 +65,9 @@ Route::post('admin/suppliers/edit_suppliers/{id}', [SuppliersController::class, 
 Route::get('/admin/invoices/', [InvoicesController::class, 'invoices'] );
 Route::get('admin/invoices/add_invoices', [InvoicesController::class, 'add'] );
 Route::post('admin/invoices/add_invoices', [InvoicesController::class, 'insert_add_invoices'] );
+Route::get('admin/invoices/delete/{id}', [InvoicesController::class, 'delete_invoices'] );
+Route::get('admin/invoices/edit_invoice/{id}', [InvoicesController::class, 'edit_invoices']);
+Route::post('admin/invoices/edit_invoice/{id}', [InvoicesController::class, 'update_invoices']);
 
 
 Route::get('logout', [AuthController::class, 'logout']);
