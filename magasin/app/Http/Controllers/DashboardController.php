@@ -18,4 +18,10 @@ class DashboardController extends Controller
         //echo "hello imed eddine benzarti"; die();
         return view('admin.customers.list');
     }
+
+    public function  my_account(Request $request)
+    {
+        //echo "hello imed eddine benzarti"; die();
+        return view('admin.dashboard.myaccount.update');
+    }
 }

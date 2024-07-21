@@ -69,6 +69,10 @@ Route::get('admin/invoices/delete/{id}', [InvoicesController::class, 'delete_inv
 Route::get('admin/invoices/edit_invoice/{id}', [InvoicesController::class, 'edit_invoices']);
 Route::post('admin/invoices/edit_invoice/{id}', [InvoicesController::class, 'update_invoices']);
 
+//Admin Profile
+Route::get('/admin/myaccount/', [DashboardController::class, 'my_account'] );
+
+
 
 Route::get('logout', [AuthController::class, 'logout']);
 
