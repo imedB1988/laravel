@@ -71,6 +71,7 @@ Route::post('admin/invoices/edit_invoice/{id}', [InvoicesController::class, 'upd
 
 //Admin Profile
 Route::get('/admin/myaccount/', [DashboardController::class, 'my_account'] );
+Route::post('/admin/myaccount/', [DashboardController::class, 'my_account_update'] );
 
 
 

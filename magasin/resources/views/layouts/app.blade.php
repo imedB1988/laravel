@@ -5,12 +5,12 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Pages / Login - NiceAdmin Bootstrap Template</title>
+  <title>La Régie Nationale des Tabacs et des Allumettes</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
   <!-- Favicons -->
-  <link href="{{ url('assets/img/favicon.png')}}" rel="icon">
+  <link href="{{ url('assets/img/rnta.png')}}" rel="icon">
   <link href="{{ url('assets/img/apple-touch-icon.png')}}" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
@@ -50,7 +50,7 @@
 
               <div class="d-flex justify-content-center py-4">
                 <a href="index.html" class="logo d-flex align-items-center w-auto">
-                  <img src="{{ url('assets/img/logo.png')}}" alt="">
+                  <img src="{{ url('assets/img/rnta.png')}}" alt="">
                   <span class="d-none d-lg-block">RNTA - Magasin</span>
                 </a>
               </div>
@@ -66,7 +66,7 @@
                 <!-- You can delete the links only if you purchased the pro version. -->
                 <!-- Licensing information: https://bootstrapmade.com/license/ -->
                 <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/ -->
-                Designed by <a  href="{{url('dashboard')}}">BootstrapMade</a>
+                Designed by La Régie Nationale des Tabacs et des Allumettes (RNTA) -&copy;- 2024 
               </div>
 
             </div>

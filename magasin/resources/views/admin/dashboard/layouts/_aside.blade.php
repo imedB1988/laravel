@@ -48,6 +48,13 @@
         </a>
       </li><!-- End Dashboard Nav -->
 
+      <li class="nav-item">
+        <a class="nav-link @if(Request::segment(2)=='logout')@else collapsed @endif"  href="{{url('logout')}}">
+        <i class="bi bi-box-arrow-right"></i>
+          <span>Sign out</span>
+        </a>
+      </li><!-- End Dashboard Nav -->
+
       
 
           </ul>
