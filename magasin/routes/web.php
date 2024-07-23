@@ -7,6 +7,7 @@ use App\Http\Controllers\ProductsController;
 use App\Http\Controllers\ProductStockController;
 use App\Http\Controllers\SuppliersController;
 use App\Http\Controllers\InvoicesController;
+use App\Http\Controllers\OperationsController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -72,6 +73,9 @@ Route::post('admin/invoices/edit_invoice/{id}', [InvoicesController::class, 'upd
 //Admin Profile
 Route::get('/admin/myaccount/', [DashboardController::class, 'my_account'] );
 Route::post('/admin/myaccount/', [DashboardController::class, 'my_account_update'] );
+
+//operations
+Route::get('/admin/operations/', [OperationsController::class, 'operations'] );
 
 
 

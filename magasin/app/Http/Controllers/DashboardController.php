@@ -8,14 +8,19 @@ use Auth;
 use Hash;
 use Str;
 use File;
-
+use Illuminate\Support\Facades\DB;
 class DashboardController extends Controller
 {
 
     public function  dashboard(Request $request)
     {
         //echo "hello imed eddine benzarti"; die();
-        return view('admin.dashboard.list');
+        $data['product']  = DB::table('products')->get();
+        $data['user']  = DB::table('users')->get();
+        $data['supplier']  = DB::table('suppliers')->get();
+        $data['invoice']  = DB::table('invoices')->get();
+        $data['productstock']  = DB::table('productstock')->where('quantity','>','0')->get();
+        return view('admin.dashboard.list', $data);
     }
 
     public function  customers(Request $request)
