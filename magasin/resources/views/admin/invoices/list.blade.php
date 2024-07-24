@@ -46,7 +46,8 @@
                       <td>{{$value->quantity}}</td>
                       <td><a href="{{url('admin/invoices/edit_invoice/'.$value->id)}}" class="btn btn-warning"><i class="bi bi-pencil-square"></i></a>
                      <a href="{{url('admin/invoices/delete/'.$value->id)}}" class="btn btn-danger" onclick="return confirm('are you sure you want to delete ?')"><i class="bi bi-trash"></i></a>
-                      </td>
+                     <a href="{{url('admin/invoices/changeStock/'.$value->id)}}" class="btn btn-warning"><i class="bi bi-pencil-square"></i>change stock</a>  
+                    </td>
                       
                     </tr>
                   @endforeach
