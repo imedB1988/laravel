@@ -69,13 +69,13 @@ Route::post('admin/invoices/add_invoices', [InvoicesController::class, 'insert_a
 Route::get('admin/invoices/delete/{id}', [InvoicesController::class, 'delete_invoices'] );
 Route::get('admin/invoices/edit_invoice/{id}', [InvoicesController::class, 'edit_invoices']);
 Route::post('admin/invoices/edit_invoice/{id}', [InvoicesController::class, 'update_invoices']);
-Route::get('/admin/invoices/{id}', [InvoicesController::class, 'changeStock'] );
+
 //Admin Profile
 Route::get('/admin/myaccount/', [DashboardController::class, 'my_account'] );
 Route::post('/admin/myaccount/', [DashboardController::class, 'my_account_update'] );
 
 //operations
-Route::get('/admin/invoices/', [InvoicesController::class, 'subtractValues'] );
+Route::get('/admin/operations/', [OperationsController::class, 'subtractValues'] );
 
 
 
