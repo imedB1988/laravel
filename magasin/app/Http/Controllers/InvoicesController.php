@@ -70,43 +70,50 @@ class InvoicesController extends Controller
 
        
 
-        public function subtractValues()
-        {
-           /* $tableAValue = ProductStockModel::where('productid', 5)->value('quantity'); // replace 1 with the actual id or condition
-            $tableBValue = InvoicesModel::where('productid', 5)->value('quantity'); // replace 1 with the actual id or condition
+        
     
-            $result = $tableAValue - $tableBValue;
-    
-            return response()->json(['result' => $result]);*/
-    
-    
-       
-               // Query Builder approach
-               /*$tableAValue = DB::table('productstock')->where('productid', 5)->value('quantity');
-               $tableBValue = DB::table('invoices')->where('productid', 5)->value('quantity');
-       
-               if ($tableAValue !== null && $tableBValue !== null) {
-                   $resultQueryBuilder = $tableAValue - $tableBValue;
-                   DB::table('productstock')
-                   ->where('productid', 5) // Assuming 'id' is the common identifier
-                   ->update(['quantity' => $resultQueryBuilder]);
-               } else {
-                   $resultQueryBuilder = 'One of the records not found.';
-               }
-       
-               return response()->json([
-                   'query_builder_result' => $resultQueryBuilder,
-               ]);*/
-               DB::table('productstock')
-               ->join('invoices', 'productstock.productid', '=', 'productstock.productid') // Join the tables
-               ->update([
-                   'productstock.quantity' => DB::raw('productstock.quantity - invoices.quantity') // Subtract stock_quantity from orders.quantity
-               ]);
+           public function changeStock($id, Request $request){
+      
+            $data['oldRecord']=InvoicesModel::find($id);
+            
+            return view('admin.invoices.list', $data);
+            }
 
-              
+            public function change_Stock($id, Request $request){
+      /*
+            $findinvoice=InvoicesModel::find($id);
+           $tableAValue = DB::table('productstock')->value('quantity');
+           $tableBValue = DB::table('invoices')->value('quantity');
+
+   
+           if ($tableAValue !== null && $tableBValue !== null) {
+               //$resultQueryBuilder = $tableAValue - $tableBValue;
+               $resultQueryBuilder =  DB::table('productstock')
+           ->join('invoices', 'productstock.productid', '=', 'productstock.productid') // Join the tables
+           ->where('invoices.id', '=', $findinvoice)
+           ->update([
+               'productstock.quantity' => DB::raw($tableAValue - $tableBValue) // Subtract stock_quantity from orders.quantity
+           ]);
+           } else {
+               $resultQueryBuilder = 'One of the records not found.';
            }
-    
+   
+           return response()->json([
+               'query_builder_result' => $resultQueryBuilder,
+           ]);*/
+           $tableAValue = DB::table('productstock')->value('quantity');
+           $tableBValue = DB::table('invoices')->value('quantity');
+           $resultQueryBuilder = $tableAValue - $tableBValue;
+           $save = InvoicesModel::find($id);
+           //trim($request->quantity);
+           $save ->quantity = DB::table('productstock')
+    ->join('invoices', 'productstock.productid', '=', 'invoices.productid')
+    ->where('invoices.id', $id)
+    ->update(['productstock.quantity' => $resultQueryBuilder]);
+    $save->save();
+       }
+                }
     
    
 
-}
+

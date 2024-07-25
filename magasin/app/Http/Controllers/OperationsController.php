@@ -22,7 +22,7 @@ class OperationsController extends Controller
 
    
            // Query Builder approach
-           $tableAValue = DB::table('productstock')->value('quantity');
+  /*         $tableAValue = DB::table('productstock')->value('quantity');
            $tableBValue = DB::table('invoices')->value('quantity');
    
            if ($tableAValue !== null && $tableBValue !== null) {
@@ -39,8 +39,11 @@ class OperationsController extends Controller
            return response()->json([
                'query_builder_result' => $resultQueryBuilder,
            ]);
-
-          
+*/
+DB::table('productstock')
+    ->join('invoices', 'productstock.productid', '=', 'invoices.productid')
+    ->where('invoices.id', 3)
+    ->update(['productstock.quantity' => 5000]);
        }
     }
 
