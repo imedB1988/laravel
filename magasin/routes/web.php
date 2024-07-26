@@ -67,10 +67,17 @@ Route::get('/admin/invoices/', [InvoicesController::class, 'invoices'] );
 Route::get('admin/invoices/add_invoices', [InvoicesController::class, 'add'] );
 Route::post('admin/invoices/add_invoices', [InvoicesController::class, 'insert_add_invoices'] );
 Route::get('admin/invoices/delete/{id}', [InvoicesController::class, 'delete_invoices'] );
+
 Route::get('admin/invoices/edit_invoice/{id}', [InvoicesController::class, 'edit_invoices']);
 Route::post('admin/invoices/edit_invoice/{id}', [InvoicesController::class, 'update_invoices']);
+
 Route::get('/admin/invoices/changeStock/{id}', [InvoicesController::class, 'changeStock'] );
 Route::get('/admin/invoices/changeStock/{id}', [InvoicesController::class, 'change_Stock'] );
+
+
+
+
+
 
 //Admin Profile
 Route::get('/admin/myaccount/', [DashboardController::class, 'my_account'] );
@@ -78,6 +85,9 @@ Route::post('/admin/myaccount/', [DashboardController::class, 'my_account_update
 
 //operations
 Route::get('/admin/operations/', [OperationsController::class, 'subtractValues'] );
+
+//PDF
+Route::get('/admin/generatepdf/', [PDFController::class, 'generatePDF'] );
 
 
 

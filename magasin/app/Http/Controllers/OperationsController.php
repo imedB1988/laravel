@@ -40,10 +40,13 @@ class OperationsController extends Controller
                'query_builder_result' => $resultQueryBuilder,
            ]);
 */
+
+$tableAValue = DB::table('productstock')->value('quantity');
+$tableBValue = DB::table('invoices')->value('quantity');
 DB::table('productstock')
     ->join('invoices', 'productstock.productid', '=', 'invoices.productid')
-    ->where('invoices.id', 3)
-    ->update(['productstock.quantity' => 5000]);
+    ->where('invoices.id', 17)
+    ->update(['productstock.quantity' => $tableAValue - $tableBValue]);
        }
     }
 
